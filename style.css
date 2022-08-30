@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+:root {
+    --color-primary100: hsl(31, 77%, 52%);
+    --color-primary200: hsl(184, 100%, 22%);
+    --color-primary300: hsl(179, 100%, 13%);
+
+    --color-neutral100: hsla(0, 0%, 100%, 0.75);
+    --color-neutral200: hsl(0, 0%, 95%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: .75rem;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+}
+
+section {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+
+    width: min(90%, 50rem);
+}
+
+.card {
+    padding: 2.5rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.card:nth-of-type(1) {
+    background-color: var(--color-primary100);
+    border-radius: .5rem .5rem 0 0;
+}
+
+.card:nth-of-type(2) {
+    background-color: var(--color-primary200);
+}
+
+.card:nth-of-type(3) {
+    background-color: var(--color-primary300);
+    border-radius: 0 0 .5rem .5rem;
+}
+
+.content {
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.card:nth-of-type(1) button {
+    background-color: rgba(255, 255, 255, 1);
+    color: var(--color-primary100);
+
+    transition: background-color 200ms ease;
+}
+
+.card:nth-of-type(1) button:hover {
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+}
+
+.card:nth-of-type(2) button {
+    background-color: rgba(255, 255, 255, 1);
+    color: var(--color-primary200);
+    transition: background-color 200ms;
+}
+
+.card:nth-of-type(2) button:hover {
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+}
+
+.card:nth-of-type(3) button {
+    background-color: rgba(255, 255, 255, 1);
+    color: var(--color-primary300);
+    transition: background-color 200ms;
+}
+
+.card:nth-of-type(3) button:hover {
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+}
+
+button {
+    cursor: pointer;
+    padding: 1rem 2rem;
+
+    border-radius: 100vmax;
+    border: 2px solid white;
+
+    font-size: .75rem;
+}
+
+button:hover {
+    color: black;
+}
+
+h1 {
+    font-size: 2rem;
+    font-family: 'Big Shoulders Display', cursive;
+
+    color: var(--color-neutral200);
+    text-transform: uppercase;
+}
+
+p {
+    color: var(--color-neutral100);
+    line-height: 2rem;
+}
+
+@media screen and (min-width: 50em) {
+    body {
+        font-size: 1rem;
+    }
+
+    section {
+        grid-template-columns: repeat(3 ,1fr);
+        grid-template-rows: 1fr;
+    }
+
+    .card:nth-of-type(1) {
+        border-radius: .5rem 0 0 .5rem;
+    }
+
+    .card:nth-of-type(3) {
+        border-radius: 0 .5rem .5rem 0;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
